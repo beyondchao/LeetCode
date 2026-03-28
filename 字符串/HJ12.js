@@ -29,3 +29,19 @@ arr2.forEach((item) => {
     }
 })
 console.log(outStr.join("") + "," + max)
+
+// 方法2 使用正则匹配
+let reg = new RegExp(/[a-z]/, "g")
+let str = line.replace(reg, " ");
+let arr = str.split(" ");
+let maxLenStr = ""
+let maxLen = 0
+arr.forEach((item) => {
+    if (item.length > maxLen) {
+        maxLenStr = item;
+        maxLen = item.length
+    } else if (item.length == maxLen) {
+        maxLenStr += item
+    }
+})
+console.log(maxLenStr+ "," + maxLen)
